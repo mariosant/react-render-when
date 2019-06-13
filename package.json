@@ -6,14 +6,14 @@
 		"website": "https://mariosant.carrd.co"
 	},
 	"version": "0.0.1",
-	"description": "write-your-description-here",
+	"description": "Conditionally render a component",
 	"main": "./dist/index.js",
 	"scripts": {
 		"test": "jest",
 		"release": "standard-version",
 		"dev": "docz dev --typescript docs/",
 		"transpile": "tsc --build tsconfig.json",
-		"prepublish": "transpile"
+		"prepublish": "yarn transpile"
 	},
 	"license": "MIT",
 	"dependencies": {

@@ -1,39 +1,65 @@
-# React module boilerplate with full typescript support
+# react-render-when
 
-Lorem ipsum dorcet sit amet
+Conditionally render a component
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M7W45W)
 
-[![NPM version](https://img.shields.io/npm/v/@mariosant/package-name.svg)](https://www.npmjs.com/package/@mariosant/package-name)
-[![CircleCI](https://circleci.com/gh/mariosant/package-name/tree/master.svg?style=svg)](https://circleci.com/gh/mariosant/package-name/tree/master)
+[![NPM version](https://img.shields.io/npm/v/@mariosant/react-render-when.svg)](https://www.npmjs.com/package/@mariosant/react-render-when)
+[![CircleCI](https://circleci.com/gh/mariosant/react-render-when/tree/master.svg?style=svg)](https://circleci.com/gh/mariosant/react-render-when/tree/master)
 
 ## Installation
 
-Add `@mariosant/package-name` to your `package.json`.
+Add `@mariosant/react-render-when` to your `package.json`.
 
 ```bash
-$ npm install @mariosant/package-name
+$ npm install @mariosant/react-render-when
 ```
 
 You can now import the module and use it like
 
 ```javascript
-import {example} from '@mariosant/package-name';
+import {renderWhen, renderUnless} from '@mariosant/react-render-when';
 ```
 
 ## Usage
 
-Lorem ipsum.
+Both `renderWhen` and `renderUnless` take 2 parameters. A predicate function and a React component.
+
+Check out the following example:
+
+```
+import {renderWhen} from '@mariosant/react-render-when';
+
+const needsCowbell = ({cowbells}) => cowbells < 10;
+
+const Advice = renderWhen(needsCowbell, () => <p>Needs more cowbell</p>)
+
+<Advice cowbell={1} />    // will render
+<Advice cowbell={100} />  // will not render
+```
+
+The predicate inverses when using `renderUnless`:
+
+```
+import {renderUnless} from '@mariosant/react-render-when';
+
+const enoughCowbell = ({cowbells}) => cowbells >= 10;
+
+const Advice = renderUnless(enoughCowbell, () => <p>Needs more cowbell</p>)
+
+<Advice cowbell={1} />    // will render
+<Advice cowbell={100} />  // will not render
+```
 
 ## Meta
 
 Marios Antonoudiou – [@marios_ant](https://twitter.com/marios_ant) – mariosant@sent.com
 
-Distributed under the MIT license. [https://github.com/mariosant/package-name](https://github.com/mariosant/package-name)
+Distributed under the MIT license. [https://github.com/mariosant/react-render-when](https://github.com/mariosant/react-render-when)
 
 ## Contributing
 
-1. Fork it (<https://github.com/mariosant/package-name/fork>)
+1. Fork it (<https://github.com/mariosant/react-render-when/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes using a semantic commit message.
 4. Push to the branch (`git push origin feature/fooBar`)
