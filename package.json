@@ -1,0 +1,48 @@
+{
+	"name": "@mariosant/package-name",
+	"author": {
+		"name": "Marios Antonoudiou",
+		"email": "mariosant@sent.com",
+		"website": "https://mariosant.carrd.co"
+	},
+	"version": "0.0.0",
+	"description": "write-your-description-here",
+	"main": "./dist/index.js",
+	"scripts": {
+		"test": "jest",
+		"release": "standard-version",
+		"dev": "docz dev --typescript docs/",
+		"transpile": "tsc --build tsconfig.json",
+		"prepublish": "transpile"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"ramda": "0.26.1"
+	},
+	"devDependencies": {
+		"@testing-library/react": "^8.0.1",
+		"@types/jest": "^24.0.13",
+		"@types/ramda": "^0.26.9",
+		"@types/react": "^16.8.19",
+		"@types/react-dom": "^16.8.4",
+		"docz": "^1.2.0",
+		"docz-theme-default": "^1.2.0",
+		"husky": "^2.4.1",
+		"jest": "^24.3.1",
+		"jest-dom": "^3.2.2",
+		"prettier": "^1.16.4",
+		"react": "^16.8",
+		"react-dom": "^16.8",
+		"standard-version": "^6.0.1",
+		"ts-jest": "^24.0.2"
+	},
+	"peerDependencies": {
+		"react": "^16.8",
+		"react-dom": "^16.8"
+	},
+	"husky": {
+		"hooks": {
+			"pre-push": "yarn test"
+		}
+	}
+}
