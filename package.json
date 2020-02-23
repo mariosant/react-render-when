@@ -28,7 +28,7 @@
     "trailingComma": "es5",
     "useTabs": true
   },
-  "name": "react-render-when",
+  "name": "@mariosant/react-render-when",
   "author": "Marios Antonoudiou",
   "module": "dist/react-render-when.esm.js",
   "devDependencies": {
