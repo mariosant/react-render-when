@@ -1,5 +1,4 @@
-import { ifElse } from 'ramda';
-import { curry } from 'ramda';
+import { curry, ifElse } from 'ramda';
 
 const doNotRender = () => null;
 
